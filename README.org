@@ -1,4 +1,4 @@
-* dotfiles_default
+#+TITLE:     dotfiles_default
 
 Fabrice Niessen's default dotfiles
 
