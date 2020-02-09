@@ -2,6 +2,17 @@
 
 Fabrice Niessen's default dotfiles
 
+** How to use
+
+Clone this repository (including submodules) in ~/.dotfiles directory, e.g.:
+
+$ git clone --recursive https://github.com/fniessen/dotfiles ~/.dotfiles
+
+Use stow to manage symlinks, e.g.:
+
+$ cd ~/.dotfiles
+$ stow zsh
+
 ** Install my dotfiles onto a new system
 
 Existing dotfiles will be backed up in =~/.dotfiles-backup/=.
