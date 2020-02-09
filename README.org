@@ -6,21 +6,34 @@ Fabrice Niessen's default dotfiles
 
 #+begin_src shell
 cd "$HOME"
+
+# Clone your dotfiles into a bare repository in a "dot" folder of your $HOME.
 git clone --bare git@github.com:fniessen/dotfiles_default.git "$HOME"/.cfg
+
+# Checkout the actual content from the bare repository to your $HOME.
 function config {
    /usr/bin/git --git-dir="$HOME"/.cfg/ --work-tree="$HOME" $@
 }
-mkdir -p .config-backup
 config checkout
+
+# If the above step failed, move all the offending files automatically to
+# a backup folder.
 if [ $? = 0 ]; then
     echo "Checked out config.";
 else
     echo "Backing up pre-existing dot files.";
+    mkdir -p .config-backup && \
     config checkout 2>&1 \
         | egrep "\s+\." \
         | awk {'print $1'} \
         | xargs -I{} mv {} .config-backup/{}
 fi;
+
+# Re-run the check out if you had problems.
 config checkout
+
+# Set the flag showUntrackedFiles to no on this specific (local) repository.
 config config status.showUntrackedFiles no
 #+end_src
+
+(Source: https://www.atlassian.com/git/tutorials/dotfiles)
