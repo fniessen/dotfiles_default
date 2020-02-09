@@ -4,6 +4,8 @@ Fabrice Niessen's default dotfiles
 
 ** Install my dotfiles onto a new system
 
+Existing dotfiles will be backed up in =~/.dotfiles-backup/=.
+
 #+begin_src shell
 cd "$HOME"
 
