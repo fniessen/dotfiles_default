@@ -60,5 +60,5 @@ Use ~dotfiler~ to manage symlinks, e.g.:
 ~/.dotfiler/bin/dot add git@github.com:fniessen/shell-leuven
 ~/.dotfiler/bin/dot add git@github.com:fniessen/svn-leuven
 
-~/.dotfiles/bin/dot update
+~/.dotfiler/bin/dot update
 #+end_src
