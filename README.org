@@ -2,17 +2,6 @@
 
 Fabrice Niessen's default dotfiles
 
-** How to use
-
-Clone this repository (including submodules) in ~/.dotfiles directory, e.g.:
-
-$ git clone --recursive https://github.com/fniessen/dotfiles ~/.dotfiles
-
-Use stow to manage symlinks, e.g.:
-
-$ cd ~/.dotfiles
-$ stow zsh
-
 ** Install my dotfiles onto a new system
 
 Existing dotfiles will be backed up in =~/.dotfiles-backup/=.
@@ -50,3 +39,26 @@ config config status.showUntrackedFiles no
 #+end_src
 
 (Source: https://www.atlassian.com/git/tutorials/dotfiles)
+
+** How to use
+
+Clone this repository in ~/.dotfiles directory, e.g.:
+
+#+begin_src shell
+git clone https://github.com/svetlyak40wt/dotfiler ~/.dotfiler
+#+end_src
+
+Use ~dotfiler~ to manage symlinks, e.g.:
+
+#+begin_src shell
+~/.dotfiler/bin/dot add git@github.com:fniessen/dotfiles_default.git
+# ~/.dotfiler/bin/dot add git@bitbucket.org-fni-pirilampo-be:mcpflow/dotfiles_private_work
+# ~/.dotfiler/bin/dot add git@bitbucket.org-fni-pirilampo-be:mcpflow/dotfiles_private_home
+
+~/.dotfiler/bin/dot add https://github.com/fniessen/git-leuven
+~/.dotfiler/bin/dot add https://github.com/fniessen/shell-extras
+~/.dotfiler/bin/dot add https://github.com/fniessen/shell-leuven
+~/.dotfiler/bin/dot add https://github.com/fniessen/svn-leuven
+
+~/.dotfiles/bin/dot update
+#+end_src
