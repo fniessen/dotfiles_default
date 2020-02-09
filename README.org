@@ -2,6 +2,8 @@
 
 Fabrice Niessen's default dotfiles
 
+* Install your dotfiles onto a new system (or migrate to this setup)
+
 #+begin_src shell
 git clone --bare https://bitbucket.org/durdn/cfg.git $HOME/.cfg
 function config {
