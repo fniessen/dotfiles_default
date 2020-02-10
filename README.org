@@ -52,11 +52,9 @@ Use ~dotfiler~ to manage symlinks, e.g.:
 
 #+begin_src shell
 ~/.dotfiler/bin/dot add git@github.com:fniessen/dotfiles_default.git
-# ~/.dotfiler/bin/dot add git@bitbucket.org-fni-pirilampo-be:mcpflow/dotfiles_private_work
-# ~/.dotfiler/bin/dot add git@bitbucket.org-fni-pirilampo-be:mcpflow/dotfiles_private_home
 
 ~/.dotfiler/bin/dot add git@github.com:fniessen/git-leuven
-~/.dotfiler/bin/dot add git@github.com:fniessen/shell-extras
+~/.dotfiler/bin/dot add git@github.com:fniessen/shell-extras-leuven
 ~/.dotfiler/bin/dot add git@github.com:fniessen/shell-leuven
 ~/.dotfiler/bin/dot add git@github.com:fniessen/svn-leuven
 
