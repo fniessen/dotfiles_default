@@ -42,25 +42,25 @@ config config status.showUntrackedFiles no
 
 ** How to use
 
-Clone this repository in ~/.dotfiles directory, e.g.:
+Clone this repository in =~/.dotfiles= directory, e.g.:
 
 #+begin_src shell
-git clone https://github.com/svetlyak40wt/dotfiler ~/.dotfiler
+git clone https://github.com/svetlyak40wt/dotfiler ~/.dotfiles
 #+end_src
 
 Use ~dotfiler~ to manage symlinks, e.g.:
 
 #+begin_src shell
-~/.dotfiler/bin/dot add git@github.com:fniessen/dotfiles_default.git
+~/.dotfiles/bin/dot add https://github.com/fniessen/dotfiles_default.git
 
-~/.dotfiler/bin/dot add git@github.com:fniessen/git-leuven
-~/.dotfiler/bin/dot add git@github.com:fniessen/shell-extras-leuven
-~/.dotfiler/bin/dot add git@github.com:fniessen/shell-leuven
-~/.dotfiler/bin/dot add git@github.com:fniessen/svn-leuven
+~/.dotfiles/bin/dot add https://github.com/fniessen/shell-leuven
+~/.dotfiles/bin/dot add https://github.com/fniessen/shell-extras-leuven
+~/.dotfiles/bin/dot add https://github.com/fniessen/git-leuven
+~/.dotfiles/bin/dot add https://github.com/fniessen/svn-leuven
 
 # git-extra-commands
 # git-extras
 # hub
 
-~/.dotfiler/bin/dot update
+~/.dotfiles/bin/dot update
 #+end_src
