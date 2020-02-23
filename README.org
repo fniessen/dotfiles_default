@@ -57,7 +57,7 @@ Use ~dotfiler~ to manage symlinks, e.g.:
 ~/.dotfiles/bin/dot add https://github.com/fniessen/shell-extras-leuven
 ~/.dotfiles/bin/dot add https://github.com/fniessen/git-leuven
 ~/.dotfiles/bin/dot add https://github.com/fniessen/svn-leuven
-~/.dotfiler/bin/dot add git@github.com:fniessen/refcard-sql
+~/.dotfiler/bin/dot add https://github.com/fniessen/refcard-sql
 
 # git-extra-commands
 # git-extras
