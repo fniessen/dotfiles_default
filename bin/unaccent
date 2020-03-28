@@ -1,6 +1,7 @@
 #!/bin/sed -f
 
 # Mappings between accented chars and ASCII chars.
+s/\o222/'/g
 s/\o240/ /g
 s/\o300/A/g
 s/\o301/A/g
