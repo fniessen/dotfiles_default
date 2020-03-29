@@ -1,27 +1,39 @@
 #!/bin/sed -f
 
-# Mappings between accented chars and ASCII chars.
+# Mappings between accented chars (in ISO 8859-1) and ASCII chars.
+
 s/\o11/ /g
 s/\o15/ /g
+
 s/\o200/EUR/g
 s/\o205/.../g
 s/\o203/ /g
+s/\o215/ /g
 s/\o221/'/g
 s/\o222/'/g
+s/\o223/ /g
 s/\o225/-/g
 s/\o226/ /g
 s/\o227/ /g
 s/\o234/oe/g
+
 s/\o240/ /g
+s/\o243/pound/g
 s/\o247/alinea/g
-s/\o250/ /g
+s/\o250/uml/g
 s/\o251/(C)/g
 s/\o253/'/g
 s/\o260/./g
 s#\o261#+/-#g
+s/\o262/2/g
 s/\o263/3/g
+s/\o265/u/g
+s/\o272/./g
 s/\o273/'/g
 s#\o275#1/2#g
+s#\o276#3/4#g
+s/\o277/?/g
+
 s/\o300/A/g
 s/\o301/A/g
 s/\o302/A/g
@@ -42,6 +54,7 @@ s/\o331/U/g
 s/\o332/U/g
 s/\o333/U/g
 s/\o334/U/g
+
 s/\o340/a/g
 s/\o341/a/g
 s/\o342/a/g
@@ -59,6 +72,7 @@ s/\o363/o/g
 s/\o364/o/g
 s/\o365/o/g
 s/\o366/o/g
+s/\o370/u/g
 s/\o371/u/g
 s/\o372/u/g
 s/\o373/u/g
