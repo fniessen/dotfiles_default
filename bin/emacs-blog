@@ -1,0 +1,38 @@
+#!/usr/bin/emacs --script
+
+(require 'calendar)
+(defun blog (action &rest rst)
+  (cond ((string-equal action "post")
+     (if (equal rst nil)
+         (print "Please input title")
+       (let ((post-file (concat (format-time-string "%Y-%m-%d")
+                     "-"
+                     (car rst)
+                     ".org")))
+         (progn
+           (with-temp-file (concat "~/blog/org/_posts/"
+                       post-file)
+         (insert (concat "#+begin_html\n"
+                 "---\n"
+                 "layout     : post\n"
+                 "title      : \n"
+                 "categories : \n"
+                 "tags       : \n"
+                 "excerpt    : \n"
+                 "---\n"
+                 "#+end_html\n")))
+           (print (format "Create post file %s in post directory" post-file))
+           (shell-command (concat "emacs "
+                      "~/blog/org/_posts/"
+                      post-file))))))
+     ((string-equal action "publish")
+      (progn
+        (org-publish-project "blog-linusp")
+        (print "Project has been published!")))
+    (t (print "Action: post/publish"))))
+
+(load-file "~/.emacs.d/site-lisp/xml-rpc.el")
+(load-file "~/.emacs.d/site-lisp/wc-mode.el")
+(load-file "~/.emacs.d/myplugins/org.el")
+
+(blog (elt argv 0) (elt argv 1))
