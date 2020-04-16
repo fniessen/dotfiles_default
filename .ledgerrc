@@ -1,1 +1,18 @@
---date-format=%Y/%m/%d
+--date-format=%Y-%m-%d
+
+; Complain if any accounts are not previously defined.
+--strict
+
+; Set the start of the week on Mondays instead of the default Sunday.
+--start-of-week=1
+
+--color
+
+--pedantic
+--file ~/Sync/finance/strict.ledger
+--file ~/Sync/finance/journal-2019.ledger
+--file ~/Sync/finance/journal-2020.ledger
+
+; --args-only makes ledger ignore the .ledgerrc file.
+
+; See https://atomicules.co.uk/2015/07/08/How-I-use-Ledger.html
