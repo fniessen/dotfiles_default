@@ -169,6 +169,9 @@ ansi-test()
 
 ansi-test
 
+# XXX Make output more compact as in
+# http://www.lihaoyi.com/post/BuildyourownCommandLinewithANSIescapecodes.html
+
 for b in {0..7} 9; do
     for f in {0..7} 9; do
         for attr in "" bold; do
