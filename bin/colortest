@@ -172,6 +172,19 @@ ansi-test
 # XXX Make output more compact as in
 # http://www.lihaoyi.com/post/BuildyourownCommandLinewithANSIescapecodes.html
 
+
+256colors() {
+    for i in {0..255}; do
+        printf "\033[48;5;%dm\033[38;5;15m %03d " $i $i
+        printf "\033[33;5;0m\033[38;5;%dm %03d " $i $i
+        (( i+1 <= 16 ? (i+1) % 8 :  ((i+1)-16) % 6  )) || printf "\033[0m\n"
+        (( i+1 <= 16 ? (i+1) % 16 : ((i+1)-16) % 36 )) || printf "\033[0m\n"
+    done
+}
+256colors
+
+
+
 for b in {0..7} 9; do
     for f in {0..7} 9; do
         for attr in "" bold; do
