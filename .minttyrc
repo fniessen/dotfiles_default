@@ -30,7 +30,7 @@ RightClickAction=paste
 
 # Window
 Columns=132
-Rows=80
+Rows=55
 ScrollbackLines=100000
 
 # Terminal
