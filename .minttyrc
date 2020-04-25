@@ -1,7 +1,7 @@
 # See `man mintty'.
 
-# Looks
-ForegroundColour=108,131,134
+# Looks.
+ForegroundColour=168,168,168
 BackgroundColour=0,24,40
 CursorColour=0,255,0
 SearchForegroundColour=white
@@ -13,7 +13,7 @@ CursorType=underscore
 # HighlightForegroundColour=
 # HighlightBackgroundColour=
 
-# Text
+# Text.
 Font=Powerline Consolas
 FontHeight=9
 BoldAsFont=yes
@@ -22,18 +22,18 @@ AllowBlinking=yes
 Locale=C
 Charset=UTF-8
 
-# Keys
+# Keys.
 SwitchShortcuts=no
 
-# Mouse
+# Mouse.
 RightClickAction=paste
 
-# Window
+# Window.
 Columns=132
 Rows=55
 ScrollbackLines=100000
 
-# Terminal
+# Terminal.
 Term=xterm-256color
 BellSound=yes
 BellFlash=yes
