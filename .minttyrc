@@ -4,9 +4,9 @@
 ForegroundColour=168,168,168
 BackgroundColour=0,24,40
 CursorColour=0,255,0
-SearchForegroundColour=white
+SearchForegroundColour=245,245,245
 SearchBackgroundColour=bright yellow
-SearchCurrentColour=blue
+SearchCurrentColour=0,0,255
 Transparency=off
 OpaqueWhenFocused=yes
 CursorType=underscore
