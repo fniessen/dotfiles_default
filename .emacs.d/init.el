@@ -1,6 +1,6 @@
 ;;; init.el --- Emacs configuration file
 
-;; Copyright (C) 2012-2019 Fabrice Niessen
+;; Copyright (C) 2012-2020 Fabrice Niessen
 
 ;;; Commentary:
 
@@ -134,8 +134,10 @@
 ;; )
 
 (let ((init-local "~/.emacs.d/init_local.el"))
-  (when (file-exists-p init-local)
-    (load-file init-local)))
+  (if (file-exists-p init-local)
+      (load-file init-local)
+    (message (concat init-local " NOT found"))
+    (sit-for 1.5)))
 
 ;; This is for the sake of Emacs.
 ;; Local Variables:
