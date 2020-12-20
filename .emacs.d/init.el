@@ -13,7 +13,7 @@
 (ignore-errors
   (package-initialize))
 
-(message "(Info) Loading `%s'..." load-file-name)
+(message "[Loading `%s'...]" load-file-name)
 
 ;;* Load path ----------------------------------------------------------------
 
