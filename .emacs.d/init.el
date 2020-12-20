@@ -95,7 +95,6 @@
 ;; (setq leuven-load-chapter-23-major-and-minor-modes nil)
 ;; (setq leuven-load-chapter-24-indentation nil)
 ;; (setq leuven-load-chapter-25-text nil)       ; XXX Loads Org at startup, if 25 commented and 27 uncommented!
-;; (setq leuven-load-chapter-25.10-org-mode nil)
 ;; (setq leuven-load-chapter-25.11-tex-mode nil)
 ;; (setq leuven-load-chapter-26-programs nil)
 ;; (setq leuven-load-chapter-27-building nil)
@@ -132,6 +131,22 @@
 (when (locate-library "emacs-leuven")
   (require 'emacs-leuven))
 ;; )
+
+;; XXX chapter 25...
+(when (locate-library "org-leuven")
+  (require 'org-leuven))
+
+;; XXX chapter 32???
+(when (locate-library "bbdb-leuven")
+  (require 'bbdb-leuven))
+
+;; XXX chapter ???
+(when (locate-library "ess-leuven")
+  (require 'ess-leuven))
+
+;; XXX chapter ???
+(when (locate-library "ledger-leuven")
+  (require 'ledger-leuven))
 
 (let ((init-local "~/.emacs.d/init_local.el"))
   (if (file-exists-p init-local)
