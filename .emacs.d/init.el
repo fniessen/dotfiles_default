@@ -135,20 +135,20 @@
 ;; )
 
 ;; XXX chapter 25...
-(when (locate-library "org-leuven")
-  (require 'org-leuven))
+(when (locate-library "emacs-leuven-org")
+  (require 'emacs-leuven-org))
 
 ;; XXX chapter 32???
-(when (locate-library "bbdb-leuven")
-  (require 'bbdb-leuven))
+(when (locate-library "emacs-leuven-bbdb")
+  (require 'emacs-leuven-bbdb))
 
 ;; XXX chapter ???
-(when (locate-library "ess-leuven")
-  (require 'ess-leuven))
+(when (locate-library "emacs-leuven-ess")
+  (require 'emacs-leuven-ess))
 
 ;; XXX chapter ???
-(when (locate-library "ledger-leuven")
-  (require 'ledger-leuven))
+(when (locate-library "emacs-leuven-ledger")
+  (require 'emacs-leuven-ledger))
 
 (let ((init-local "~/.emacs.d/init_local.el"))
   (if (file-exists-p init-local)
