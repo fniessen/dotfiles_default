@@ -153,7 +153,7 @@
 (let ((init-local "~/.emacs.d/init_local.el"))
   (if (file-exists-p init-local)
       (load-file init-local)
-    (message (concat init-local " NOT found"))
+    (message (concat "[" init-local " NOT found]"))
     (sit-for 1.5)))
 
 ;; This is for the sake of Emacs.
