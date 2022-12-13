@@ -123,7 +123,7 @@
 ;;       '(useless-package
 ;;         other-annoying-package))
 
-(let ((emacs-leuven-path "~/emacs-leuven/lisp/"))
+(let ((emacs-leuven-path "~/lisp/"))
   (when (file-exists-p emacs-leuven-path)
     (add-to-list 'load-path (expand-file-name emacs-leuven-path))))
 
