@@ -1,6 +1,6 @@
 ;;; init.el --- Emacs configuration file
 
-;; Copyright (C) 2012-2020 Fabrice Niessen
+;; Copyright (C) 2012-2022 Fabrice Niessen
 
 ;;; Commentary:
 
@@ -123,7 +123,7 @@
 ;;       '(useless-package
 ;;         other-annoying-package))
 
-(let ((emacs-leuven-path "~/.dotfiles/emacs-leuven/"))
+(let ((emacs-leuven-path "~/emacs-leuven/lisp/"))
   (when (file-exists-p emacs-leuven-path)
     (add-to-list 'load-path (expand-file-name emacs-leuven-path))))
 
