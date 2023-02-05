@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Remove unwanted files and directories from the system, potentially freeing up
+# disk space.
+
 # Recycle bin.
 find ~/.local/ -mindepth 1 -maxdepth 1 -exec rm -rf -v {} +
 
