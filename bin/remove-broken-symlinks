@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 # Find broken symbolic links.
-broken_symlinks=$(find . -type l ! -exec test -e {} \; -print)
+broken_symlinks=$(find . -type l -exec test ! -e {} \; -print)
+
 if [ -z "$broken_symlinks" ]; then
     echo "No broken symbolic links found."
     exit 0
