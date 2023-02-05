@@ -1,9 +1,0 @@
-#!/usr/bin/emacs --script
-
-# See Emacs script pitfalls at https://gist.github.com/lunaryorn/91a7734a8c1d93a8d1b0d3f85fe18b1e
-
-(setq debug-on-error t)
-
-(print "Hi mike")
-(require 'server)
-(print (server-running-p))
