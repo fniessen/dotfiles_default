@@ -1,8 +1,8 @@
 #!/usr/bin/expect -f
 
-# ssh-run.exp -- Use ssh to remotely execute a command
+# run-remote-command -- Use SSH to remotely execute a command
 
-# usage: ssh-run.exp [SSH_USER] [SERVER] [PASS] [COMMAND]
+# usage: run-remote-command [SSH_USER] [SERVER] [PASS] [COMMAND]
 
 # useful GLOBAL
 set argv0 [file tail $argv0]
@@ -85,4 +85,4 @@ send "exit\r"
 
 exit $RC
 
-## ssh-run.exp ends here
+## run-remote-command ends here
