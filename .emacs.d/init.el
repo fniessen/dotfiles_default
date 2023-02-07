@@ -1,15 +1,12 @@
 ;;; init.el --- Emacs configuration file
 
-;; Copyright (C) 2012-2022 Fabrice Niessen
+;; Copyright (C) 2012-2023 Fabrice Niessen
 
 ;;; Commentary:
 
 ;;; Code:
 
-;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
-;; You may delete these explanatory comments.
+;; Initialize the package manager.
 (ignore-errors
   (package-initialize))
 
@@ -17,18 +14,9 @@
 
 ;;* Load path ----------------------------------------------------------------
 
-;; Org mode (reverse order, so that the Org lisp directory will be found
-;; before the Org contrib lisp directory)
-;; (add-to-list 'load-path "~/Public/Repositories/org-mode/testing")
-;; (add-to-list 'load-path "~/Public/Repositories/org-mode/contrib/lisp") ; htmlize
-;; (add-to-list 'load-path "~/Public/Repositories/org-mode/lisp")
-
 ;; Directory containing additional Emacs Lisp packages (from the Internet).
 (add-to-list 'load-path "~/.emacs.d/site-lisp/")
 
-;; (add-to-list 'load-path "~/.emacs.d/site-lisp/ecb-2.40")
-
-;; (add-to-list 'load-path "~/src/emacs-load-time")
 ;; (require 'emacs-load-time)
 ;; (setq elt-verbose nil) ;; <<<<<<<<<<
 
@@ -39,32 +27,20 @@
 ;; - `boxquote' (side and corners)
 ;; - `calfw'
 
-;; Set default font for all frames.
-(when (and (string-match "GNU Emacs" (version))
-           (display-graphic-p))         ; Detect whether Emacs is running in
-                                        ; a text-only terminal.
+;; Set a font for (all) the frame(s) if the display is graphic.
+(when (display-graphic-p)
   (cond
-   ((and (font-info "Consolas")
-         (or (eq system-type 'windows-nt)
-             (eq system-type 'cygwin)))
+   ((font-info "Consolas")
     (set-frame-font "Consolas-9" nil t))
-   ;; ((font-info "Courier New")
-   ;;  (set-frame-font "Courier New-9" nil t))
    ((font-info "Hack")
     (set-frame-font "Hack-8" nil t))
    ((font-info "DejaVu Sans Mono")
-    (set-frame-font "DejaVu Sans Mono-11" nil t))
-   ;; ((font-info "Lucida Sans Typewriter")
-   ;;  (set-frame-font "Lucida Sans Typewriter-9" nil t))
-   ;; ((font-info "Lucida Console")
-   ;;  (set-frame-font "Lucida Console-9" nil t))
-   ))
+    (set-frame-font "DejaVu Sans Mono-11" nil t))))
 
 ;; Other monospaced fonts to look at (with many UTF-8 chars):
 ;; - Source Code Pro (!)
 ;; - Free Monospaced
 ;; - Inconsolata
-
 ;; - Droid Sans Mono
 ;; - Menlo (!)
 ;; - Monaco
@@ -123,6 +99,7 @@
 ;;       '(useless-package
 ;;         other-annoying-package))
 
+;; Add the '~/lisp/' directory to the load path if it exists.
 (let ((emacs-leuven-path "~/lisp/"))
   (when (file-exists-p emacs-leuven-path)
     (add-to-list 'load-path (expand-file-name emacs-leuven-path))))
@@ -130,26 +107,18 @@
 ;; (let ((file-name-handler-alist nil))    ; Easy little known step to speed up
 ;;                                         ; Emacs start up time.
 ;; FIXME: When activated, breaks windows-path interpretation of 'es' results...
-(when (locate-library "emacs-leuven")
-  (require 'emacs-leuven))
-;; )
 
-;; XXX chapter 25...
-(when (locate-library "emacs-leuven-org")
-  (require 'emacs-leuven-org))
+;; Load several libraries.
+(dolist
+    (library '("emacs-leuven"
+               "emacs-leuven-org"
+               "emacs-leuven-bbdb"
+               "emacs-leuven-ess"
+               "emacs-leuven-ledger"))
+  (when (locate-library library)
+    (require (intern library))))
 
-;; XXX chapter 32???
-(when (locate-library "emacs-leuven-bbdb")
-  (require 'emacs-leuven-bbdb))
-
-;; XXX chapter ???
-(when (locate-library "emacs-leuven-ess")
-  (require 'emacs-leuven-ess))
-
-;; XXX chapter ???
-(when (locate-library "emacs-leuven-ledger")
-  (require 'emacs-leuven-ledger))
-
+;; Load init_local.el.
 (let ((init-local "~/.emacs.d/init_local.el"))
   (if (file-exists-p init-local)
       (load-file init-local)
