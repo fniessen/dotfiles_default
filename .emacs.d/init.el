@@ -6,11 +6,15 @@
 
 ;;; Code:
 
+;; Start recording the load time.
+(defconst init--load-start-time (current-time)
+  "Value of `current-time' before loading the init.el file.")
+
+(message "[Loading `%s'...]" load-file-name)
+
 ;; Initialize the package manager.
 (ignore-errors
   (package-initialize))
-
-(message "[Loading `%s'...]" load-file-name)
 
 ;;* Load path ----------------------------------------------------------------
 
@@ -119,11 +123,17 @@
     (require (intern library))))
 
 ;; Load init_local.el.
-(let ((init-local "~/.emacs.d/init_local.el"))
-  (if (file-exists-p init-local)
+(let* ((init-local "~/.emacs.d/init_local.el")
+       (file-exists (file-exists-p init-local)))
+  (if file-exists
       (load-file init-local)
-    (message (concat "[" init-local " NOT found]"))
-    (sit-for 1.5)))
+    (progn
+      (message (concat "[" init-local " NOT found]"))
+      (sit-for 1.5))))
+
+;; Compute and display the load time.
+(let ((load-time (float-time (time-subtract (current-time) init--load-start-time))))
+  (message "[Loaded `%s' in %.2f s]" load-file-name load-time))
 
 ;; This is for the sake of Emacs.
 ;; Local Variables:
