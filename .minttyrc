@@ -1,7 +1,7 @@
 # See `man mintty'.
 
 # Looks.
-ForegroundColour=168,168,168
+ForegroundColour=192,192,192
 BackgroundColour=0,24,40
 CursorColour=0,255,0
 SearchForegroundColour=245,245,245
@@ -15,7 +15,7 @@ CursorType=underscore
 
 # Text.
 Font=Powerline Consolas
-FontHeight=9
+FontHeight=10
 BoldAsFont=yes
 BoldAsColour=yes
 AllowBlinking=yes
