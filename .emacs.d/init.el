@@ -35,7 +35,7 @@
 (when (display-graphic-p)
   (cond
    ((font-info "Consolas")
-    (set-frame-font "Consolas-9" nil t))
+    (set-frame-font "Consolas-10" nil t))
    ((font-info "Hack")
     (set-frame-font "Hack-8" nil t))
    ((font-info "DejaVu Sans Mono")
