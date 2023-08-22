@@ -21,6 +21,11 @@
 ;; Directory containing additional Emacs Lisp packages (from the Internet).
 (add-to-list 'load-path "~/.emacs.d/site-lisp/")
 
+;;* Must have ----------------------------------------------------------------
+
+;; Disable any input method to use pure English input.
+(setq default-input-method nil)         ; STOP ENCOUNTERING LAGGY ISSUES ON WSL2.
+
 ;; (require 'emacs-load-time)
 ;; (setq elt-verbose nil) ;; <<<<<<<<<<
 
@@ -113,31 +118,34 @@
 ;; FIXME: When activated, breaks windows-path interpretation of 'es' results...
 
 ;; Load several libraries.
-(dolist
-    (library '("emacs-leuven"
-               "emacs-leuven-org"
-               "emacs-leuven-bbdb"
-               "emacs-leuven-ess"
-               "emacs-leuven-ledger"))
+(dolist (library
+	 '(
+	   "emacs-leuven"
+	   ;; "emacs-leuven-org"
+	   "emacs-leuven-bbdb"
+	   "emacs-leuven-ess"
+	   "emacs-leuven-ledger"
+	   ))
   (when (locate-library library)
     (require (intern library))))
 
-;; Load init_local.el.
-(let* ((init-local "~/.emacs.d/init_local.el")
-       (file-exists (file-exists-p init-local)))
-  (if file-exists
-      (load-file init-local)
-    (progn
-      (message (concat "[" init-local " NOT found]"))
-      (sit-for 1.5))))
+;; Load several init files.
+(dolist (init-file
+	 '(
+	   "~/.emacs.d/init_emacsboost.el"
+	   "~/.emacs.d/init_local.el"
+	   "~/.emacs.d/init_local_org.el"
+	   "~/.emacs.d/init_archibus.el"
+	   ))
+  (let ((file-exists (file-exists-p init-file)))
+    (if file-exists
+        (load-file init-file)
+      (progn
+        (message (concat "[" init-file " NOT found]"))
+        (sit-for 1.5)))))
 
 ;; Compute and display the load time.
 (let ((load-time (float-time (time-subtract (current-time) init--load-start-time))))
   (message "[Loaded `%s' in %.2f s]" load-file-name load-time))
-
-;; This is for the sake of Emacs.
-;; Local Variables:
-;; ispell-local-dictionary: "american"
-;; End:
 
 ;;; init.el ends here
