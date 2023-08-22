@@ -119,24 +119,24 @@
 
 ;; Load several libraries.
 (dolist (library
-	 '(
-	   "emacs-leuven"
-	   ;; "emacs-leuven-org"
-	   "emacs-leuven-bbdb"
-	   "emacs-leuven-ess"
-	   "emacs-leuven-ledger"
-	   ))
+     '(
+       "emacs-leuven"
+       ;; "emacs-leuven-org"
+       "emacs-leuven-bbdb"
+       "emacs-leuven-ess"
+       "emacs-leuven-ledger"
+       ))
   (when (locate-library library)
     (require (intern library))))
 
 ;; Load several init files.
 (dolist (init-file
-	 '(
-	   "~/.emacs.d/init_emacsboost.el"
-	   "~/.emacs.d/init_local.el"
-	   "~/.emacs.d/init_local_org.el"
-	   "~/.emacs.d/init_archibus.el"
-	   ))
+     '(
+       "~/.emacs.d/init_emacsboost.el"
+       "~/.emacs.d/init_local.el"
+       "~/.emacs.d/init_local_org.el"
+       "~/.emacs.d/init_archibus.el"
+       ))
   (let ((file-exists (file-exists-p init-file)))
     (if file-exists
         (load-file init-file)
