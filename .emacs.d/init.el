@@ -102,7 +102,7 @@
 ;; (setq leuven-load-chapter-XX-emacs-display nil)
 ;; (setq leuven-load-chapter-99-debugging nil)
 
-;; (setq leuven-verbose-loading t)
+;; (setq lvn-verbose-loading t)
 
 ;; (setq leuven-excluded-packages
 ;;       '(useless-package
